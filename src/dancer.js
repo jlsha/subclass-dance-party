@@ -1,11 +1,17 @@
 // Creates and returns a new dancer object that can step
-var Dancer = function(top, left, timeBetweenSteps) {
+var Dancer = function(top, left, timeBetweenSteps, imagePath) {
   // use jQuery to create an HTML <span> tag
+  if (!imagePath) {
+    this.imagePath = 'images/bunny.gif';
+  } else {
+    this.imagePath = imagePath;
+  }
   this.$node = $('<span class="dancer"></span>');
+  this.$node.append('<img src=\'' + this.imagePath + '\' />');
 
   var styleSettings = {
-    top: top,
-    left: left
+    top: Math.min(top, $(window).height() - 200),
+    left: Math.min(left, $(window).width() - 200)
   };
   this.$node.css(styleSettings);
   this.timeBetweenSteps = timeBetweenSteps;
@@ -25,6 +31,13 @@ Dancer.prototype.setPosition = function(top, left) {
   var styleSettings = {
     top: top,
     left: left
+  };
+  this.$node.css(styleSettings);
+};
+
+Dancer.prototype.lineUp = function() {
+  var styleSettings = {
+    left: 0
   };
   this.$node.css(styleSettings);
 };

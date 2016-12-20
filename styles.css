@@ -13,6 +13,11 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
+a.getInALine {
+  padding: 5px 12px;
+  float: left;
+  color: red;
+}
 .topbar{
   height:32px;
   background-color: #555;
@@ -21,7 +26,13 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
+  position:absolute;
+  -webkit-transition: left 2s; /* Safari */
+  transition: left 2s;
+
+  /*
   border:10px solid red;
   border-radius:10px;
-  position:absolute;
+  */
 }
+
