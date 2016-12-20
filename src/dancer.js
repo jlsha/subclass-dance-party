@@ -6,12 +6,13 @@ var Dancer = function(top, left, timeBetweenSteps, imagePath) {
   } else {
     this.imagePath = imagePath;
   }
+
   this.$node = $('<span class="dancer"></span>');
-  this.$node.append('<img src=\'' + this.imagePath + '\' />');
+  this.$node.append('<img class="dancer" src=\'' + this.imagePath + '\' />');
 
   var styleSettings = {
     top: Math.min(top, $(window).height() - 200),
-    left: Math.min(left, $(window).width() - 200)
+    left: Math.min(left, $(window).width() - 200), 
   };
   this.$node.css(styleSettings);
   this.timeBetweenSteps = timeBetweenSteps;
@@ -42,5 +43,6 @@ Dancer.prototype.lineUp = function() {
   this.$node.css(styleSettings);
 };
 
-// now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
-// this one sets the position to some random default point within the body
+Dancer.prototype.explode = function() {
+  // this.$node.find('img').attr('src', 'images/explode.gif');
+};

@@ -29,6 +29,7 @@ $(document).ready(function() {
     window.dancers.push(dancer);
     dancer.step();
     $('body').append(dancer.$node);
+
   });
 
   $('.getInALine').on('click', function(event) {
@@ -36,5 +37,6 @@ $(document).ready(function() {
       window.dancers[i].lineUp();
     }
   });
+
 });
 
