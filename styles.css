@@ -29,8 +29,10 @@ a.getInALine {
   position:absolute;
   -webkit-transition: left 2s; /* Safari */
   transition: left 2s;
+  /*
   width: 200px;
   height: 200px;
+  */
   /*
   border:10px solid red;
   border-radius:10px;

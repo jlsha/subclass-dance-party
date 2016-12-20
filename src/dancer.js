@@ -7,8 +7,8 @@ var Dancer = function(top, left, timeBetweenSteps, imagePath) {
     this.imagePath = imagePath;
   }
 
-  this.$node = $('<span class="dancer"></span>');
-  this.$node.append('<img class="dancer" src=\'' + this.imagePath + '\' />');
+  // this.$node = $('<span class="dancer"></span>');
+  this.$node = $('<img class="dancer" src=\'' + this.imagePath + '\' />');
 
   var styleSettings = {
     top: Math.min(top, $(window).height() - 200),

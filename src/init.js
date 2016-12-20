@@ -29,6 +29,7 @@ $(document).ready(function() {
     window.dancers.push(dancer);
     dancer.step();
     $('body').append(dancer.$node);
+    dancer.$node.on('click', makeBigger.bind(dancer));
 
   });
 
@@ -40,3 +41,12 @@ $(document).ready(function() {
 
 });
 
+var makeBigger = function() {
+  var styleSettings = {
+    left: this.$node.offset().left - this.$node.width() / 2,
+    top: this.$node.offset().top - this.$node.height() / 2,
+    width: this.$node.width() * 2,
+    height: this.$node.height() * 2
+  };
+  this.$node.css(styleSettings); 
+}
