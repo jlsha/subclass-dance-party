@@ -10,24 +10,20 @@ DinoDancer.prototype.step = function() {
   for (var i = 0; i < window.dancers.length; i++) {
     // collision check
     if (this !== window.dancers[i]) {
-      var dancer = window.dancers[i].$node;
+      var dancer = window.dancers[i];
 
-      /*
-      console.log('height: ' + dancer.height());
-      console.log('width: ' + dancer.width()); 
-      console.log(this.$node.height());
-      console.log(this.$node.width());
-      */
+      var buffer = 30; // buffer to make collisions less sensitive
 
-      /*
-      if (this.x < dancer.offset().left + dancer.width() &&
-        this.x + this.$node.width() > dancer.offset().left &&
-        this.y < dancer.offset().top + dancer.height() &&
-        this.y + this.$node.height() > dancer.offset().top) {
-        window.dancers[i].explode();
-        console.log('collision detected');
+      // detect collisions
+      if(!(
+        (this.$node.offset().top > dancer.$node.offset().top + dancer.$node.height()) ||
+        (this.$node.offset().left > dancer.$node.offset().left + dancer.$node.width()) ||
+        (this.$node.offset().top + this.$node.height() < dancer.$node.offset().top) ||
+        (this.$node.offset().left + this.$node.width() < dancer.$node.offset().left)
+        )) {
+        dancer.explode();
       }
-      */
+
     }
   
 
