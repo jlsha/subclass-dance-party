@@ -44,5 +44,5 @@ Dancer.prototype.lineUp = function() {
 };
 
 Dancer.prototype.explode = function() {
-  // this.$node.find('img').attr('src', 'images/explode.gif');
+  this.$node.attr('src', 'images/big_explosion.gif');
 };

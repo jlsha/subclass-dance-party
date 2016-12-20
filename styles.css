@@ -1,5 +1,7 @@
 body, html{
   height:100%;
+  background: url(images/meadow2.png);
+  background-size: cover
 }
 body{
   margin: 0px;

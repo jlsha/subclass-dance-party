@@ -19,14 +19,17 @@ DinoDancer.prototype.step = function() {
       console.log(this.$node.width());
       */
 
+      /*
       if (this.x < dancer.offset().left + dancer.width() &&
         this.x + this.$node.width() > dancer.offset().left &&
         this.y < dancer.offset().top + dancer.height() &&
         this.y + this.$node.height() > dancer.offset().top) {
         window.dancers[i].explode();
-        // console.log('collision detected');
+        console.log('collision detected');
       }
+      */
     }
+  
 
 
 
