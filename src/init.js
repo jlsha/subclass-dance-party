@@ -49,4 +49,5 @@ var makeBigger = function() {
     height: this.$node.height() * 2
   };
   this.$node.css(styleSettings); 
+  this.$node.data('size', 'bigger');
 }

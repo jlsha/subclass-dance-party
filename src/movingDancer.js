@@ -20,10 +20,10 @@ MovingDancer.prototype.step = function () {
   Dancer.prototype.step.call(this);
   this.x += this.velocity.xVel;
   this.y += this.velocity.yVel;
-  if (this.y < 0 || this.y > $(window).height()) {
+  if (this.y < 0 || this.y > $(window).height() - this.$node.height()) {
     this.velocity.yVel = -this.velocity.yVel;
   } 
-  if (this.x < 0 || this.x > $(window).width()) {
+  if (this.x < 0 || this.x > $(window).width() - this.$node.width()) {
     this.velocity.xVel = -this.velocity.xVel;
   }
   this.setPosition(this.y, this.x);
