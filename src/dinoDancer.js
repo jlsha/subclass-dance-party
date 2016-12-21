@@ -14,21 +14,18 @@ DinoDancer.prototype.step = function() {
 
       var buffer = 30; // buffer to make collisions less sensitive
 
-      // detect collisions
-      if(!(
-        (this.$node.offset().top > dancer.$node.offset().top + dancer.$node.height()) ||
-        (this.$node.offset().left > dancer.$node.offset().left + dancer.$node.width()) ||
-        (this.$node.offset().top + this.$node.height() < dancer.$node.offset().top) ||
-        (this.$node.offset().left + this.$node.width() < dancer.$node.offset().left)
-        )) {
-        dancer.explode();
+      if (!(dancer instanceof DinoDancer)) {
+        // detect collisions
+        if(!(
+          (this.$node.offset().top > dancer.$node.offset().top + dancer.$node.height()) ||
+          (this.$node.offset().left > dancer.$node.offset().left + dancer.$node.width()) ||
+          (this.$node.offset().top + this.$node.height() < dancer.$node.offset().top) ||
+          (this.$node.offset().left + this.$node.width() < dancer.$node.offset().left)
+          )) {
+          dancer.explode();
+        }
       }
-
     }
-  
-
-
-
   }
 };
 

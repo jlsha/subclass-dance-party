@@ -7,8 +7,8 @@ var MovingDancer = function(top, left, timeBetweenSteps, imagePath, velocity) {
   var vel = velocity;
   if (vel === undefined) {
     vel = {
-      xVel: Math.random() + 1,
-      yVel: Math.random() + 1
+      xVel: (Math.random() + 1) * (Math.random() > 0.5) ? -1 : 1,
+      yVel: (Math.random() + 1) * (Math.random() > 0.5) ? -1 : 1
     };
   } 
   this.velocity = vel;
